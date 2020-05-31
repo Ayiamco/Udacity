@@ -1,0 +1,195 @@
+.body{
+    width:90vw;
+    border: 1px solid black;
+    
+}
+nav a:hover{
+    color:white;
+}
+nav a{
+    padding: 10px;
+}
+
+.hd{
+    height: 100px;
+    background-color:brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+.hd h1{
+    color: white;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+}
+#current-page{
+    color:  white;
+}
+.hd a{
+    color:rgb(223, 217, 210);
+    text-decoration: none;
+}
+.post{
+    height: 300px;
+    text-align: center;
+    box-shadow: 5px 5px #888888;
+    margin-top:10px;
+    border: 2px solid  #888888;
+    background-color: rgb(220, 241, 234);
+   }
+
+   
+.post-title{
+    font-size: 30px;
+}
+.post-category{
+    color: blue;
+}
+footer{
+    background-color: brown;
+    height:60px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+    border-radius: 20px;
+}
+
+@media (min-width: 600px )and (max-width: 900px)   {
+    .hd{
+        height: 60px;
+        background-color:brown;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .hd h1{
+        padding: auto;
+        margin: auto;
+    }
+    nav a:hover{
+        color:white;
+        font-size: 25px;
+    }
+    .container{
+        
+        display: grid;
+        grid-template-columns: 46% 46%;
+        grid-template-rows:300px 300px 300px ;
+        grid-gap: 20px;
+        grid-template-areas: 
+                             "post1 post2"
+                             "post3 post4"
+                             "post5 post6";
+         justify-content: center;
+         margin-top: 20px;
+    }
+.post{
+ background-color: rgb(220, 241, 234);
+}
+ .post1{
+         grid-area: post1;
+         margin:auto;
+         
+ }
+     .post2{
+         grid-area: post2;
+         margin:auto;     
+ }
+ .post3{
+     grid-area: post3;
+     margin:auto;
+     }
+     .post4{
+         grid-area: post4;
+         margin:auto;
+ }
+ .post5{
+     grid-area: post5;
+     margin:auto;
+ }
+ .post6{
+     grid-area: post6;
+     margin:auto;
+ }
+}
+@media (min-width: 901px)   {
+    .hd{
+        height: 60px;
+        background-color:brown;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .hd h1{
+        padding: auto;
+        margin: auto;
+    }
+    nav a:hover{
+        color:white;
+        font-size: 25px;
+    }
+    .container{
+        
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows:300px 300px 300px ;
+        grid-gap: 20px;
+        grid-template-areas: 
+                             "post1 post2 post3"
+                             "post4 post5 post6"
+                             "post7 post8 post9"
+                             ;
+         justify-content: center;
+         margin-top: 20px;
+    }
+.post{
+ background-color: rgb(220, 241, 234);
+}
+ .post1{
+         grid-area: post1;
+         margin:auto;
+         
+ }
+     .post2{
+         grid-area: post2;
+         margin:auto;     
+ }
+ .post3{
+     grid-area: post3;
+     margin:auto;
+     }
+     .post4{
+         grid-area: post4;
+         margin:auto;
+ }
+ .post5{
+     grid-area: post5;
+     margin:auto;
+ }
+ .post6{
+     grid-area: post6;
+     margin:auto;
+ }
+ .post7{
+    grid-area: post7;
+    margin:auto;
+}
+.post8{
+    grid-area: post8;
+    margin:auto;
+}
+.post9{
+    grid-area: post9;
+    margin:auto;
+}
+}
