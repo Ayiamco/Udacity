@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="static/css/blogPost.css ">
     <style>
-        
+        .social-ico{
+            width: 20px;
+            height:20px;
+            
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+            color:brown
+        }
+        .social{
+
+            margin:auto;
+            padding: auto;;
+            
+        }
+        footer{
+            background-color: brown;
+            height:60px;
+            color:white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top:20px;
+            border-radius: 20px;
+        }
+        footer a{
+            color: white;
+        }
+        footer a:hover{
+            color: rgb(209, 192, 192);
+        }
     </style>
 </head>
 <body>
-    <div id="#" class="hd">
+    <div id="top" class="hd">
         <div id="title" class="hd-element ">
             <h1><u>Blog Title</u></h1>
             
@@ -29,7 +63,7 @@
 
         <div class="article-main">
             <h2>Sample blog Post</h2>
-            <p>January 1, 2014 by <a href="">Mark</a></p>
+            <p>January 1, 2014 by <a href="#author">Mark</a></p>
             <br>
             <p>This blog post shows a few ifferent types of content tahts supported and styled with Bootstrap. Basic typography, images and codes are all supported.</p>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem tempore modi perspiciatis quibusdam facilis sit voluptatum animi fuga vero consequatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos aliquam earum molestias repudiandae dolorem saepe, assumenda dicta, nulla dolorum laborum beatae minima quo necessitatibus labore quia odit vel amet nostrum suscipit! Doloribus iste reprehenderit hic eum ab, obcaecati dicta enim odit culpa mollitia inventore ullam eligendi consectetur facere necessitatibus omnis, fuga, dolorum error exercitationem. Aperiam obcaecati aliquid nihil quod officiis ratione amet necessitatibus voluptatibus, culpa quam quae enim dolor.</p>
@@ -37,8 +71,10 @@
             
             <hr>
             <h3>Sub-heading</h3>
-            <img src="test.jpg" alt="image">
-            <h6>image description</h6>
+            <figure>
+                <img src="static/images/test.jpg" alt="image">
+                <figcaption> Mother Nature</figcaption>
+            </figure>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas ad deleniti veniam adipisci commodi sunt sed unde possimus labore repellendus odit eligendi eum magnam amet rem aut animi, modi neque nemo ducimus, mollitia ratione laudantium est? Mollitia vel officia iure. </p><br>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque soluta architecto, minima totam voluptatem ipsa maxime tempore error dolorum aperiam! Optio molestiae quod obcaecati libero, tempore ad dolore dolor consequatur sint deleniti atque quaerat quia excepturi repellendus recusandae sit aspernatur quis quasi laborum facilis iure sed! Enim nulla dolorem minus quia libero animi repellendus, facilis fugit. Reprehenderit magnam optio veritatis?</p>
             <h3>Sub-heading</h3>
@@ -73,10 +109,12 @@
             </div>
             <br>
             <br>
-            <div class="sidebar-ad">
-                <h3 class="sidebar-ad">Ad</h3>
-                <img src="./static/images/ad3.jpeg" alt="Ad image">
-                <br>
+            <div id="author" class="sidebar-ad" >
+                <h3 class="sidebar-ad">About Author</h3>
+                <figure >
+                    <img src="./static/images/lion.jpg" alt="Ad image">
+                    <figcaption>Author in Newzealand forest Festival Dec. 2019</figcaption>
+                </figure>
                 <p class="sidebar-ad">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eius repudiandae totam, modi inventore illo eos alias eum hic, animi voluptatibus tenetur harum aperiam do</p>
             </div>
              <br>
@@ -90,11 +128,21 @@
                 <a href="">January 2020</a>
                 <a href="">December 2019</a>
             </div>
+            <div class="social">
+                <br>
+                <h3>Social Media</h3>
+                
+                    <a href="#"><img src="./static/svg/FB.svg" class="social-ico">facebook</a>
+                    <br>
+                    <a href="#"><img src="./static/svg/twitt.svg" class="social-ico"> Twitter  </a>
+                    <br>
+                    <a href="#"><img src="./static/svg/linked.svg" class="social-ico"> Linkedin</a>
+            </div>
 
             
         </div>
     </div>
     <br>
-    <footer>All rights reserved &copy; Copyright 2020</footer>
+    <footer><div><a href="#" id="current-page">Back To Top</a></div> <div>All rights reserved &copy; Copyright 2020</div> </footer>
 </body>
 </html>
