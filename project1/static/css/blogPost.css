@@ -1,7 +1,7 @@
 @import "static/css/style.css";
 body{
     background-color: rgb(235, 239, 243);
-    text-align: center;
+    
 }
 .article-container{
     display: grid;
@@ -22,7 +22,8 @@ ul,ol{
     padding: 10px;
 }
 .article-sidebar{
-    grid-area:sidebar
+    grid-area:sidebar;
+    text-align: center;
 }
 h2,p{
     margin: 0px;
@@ -44,7 +45,7 @@ h2,p{
     padding-left:10px;
 }
 img{
-    width: 70%;
+    width: 60%;
 } 
 nav{
     display: flex;
@@ -70,4 +71,50 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.author-describe{
+    height: 10px;
+    font-family: monospace;
+    margin-bottom: 35px;
+}
+.bio img{
+    border-radius: 50%;
+}
+.bio{
+    text-align: left;
+}
+.author-photo{
+    height: 150px;
+    background-image: url("/static/images/lion.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    
+}
+button{
+    padding: 5px;
+    margin:10px;
+    background-color: brown;
+    border-radius: 40%;
+    
+    
+}
+button  a{color:white;}
+h1,h2{text-align: center;}
+
+@media (min-width:600px){
+
+
+
+.author-bio{
+    text-align: left;
+    height: 150px;
+    
+}
+.bio{
+    display:grid;
+    grid-template-columns: 35% 60%;
+    grid-gap: 5px;
+}
+
 }
