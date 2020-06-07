@@ -1,13 +1,10 @@
-# Landing Page Project
+# Landing Page Project 
 
-## Table of Contents
+This is my submission for my second project during my Udacity front end nano degree program. The page was built  using HTML,CSS and Javascript. 
 
-* [Instructions](#instructions)
+I was given a base design which was done with only HTML and CSS. I had to use javascript to do the following; 
 
-## Instructions
+1. Add a navigation bar
+2. Add css designs for elements entering the viewport
+3. Add a button that enables the user scroll back to top. The button would always be visible.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.

@@ -110,6 +110,7 @@ let observer4= new IntersectionObserver(function(viewPortElement) {
 	if(viewPortElement[0].isIntersecting === true){
         //set section4 to active state
         document.querySelector('#section4').setAttribute('class','active')
+        document.querySelector('#section4').innerHTML="<div class=\"landing__container\"><h2>Section 4</h2><p>Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.\n As name suggests it comes in middle of something and that is request and response cycle.\n Middleware has access to request and response object. \n Middleware has access to next function of request-response life cycle</p><p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p></div>"
 
         //set other sections to class empty
         document.querySelector('#section1').setAttribute('class','your-active-class')
@@ -159,6 +160,11 @@ function showButton() {
         anchorButton.style.display = "none";
     }
 }
+
+
+
+
+
 
 // When the user clicks on the button, scroll to the top of the document
 function BackToTop() {

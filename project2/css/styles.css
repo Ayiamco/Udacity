@@ -72,12 +72,7 @@ section {
     
 }
 
-.navbar__menu{
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 
 .navbar__menu li {
@@ -269,4 +264,13 @@ section.your-active-class .landing__container::after {
 
     
     
+}
+
+@media (max-width:400px){
+    .navbar__menu{
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
