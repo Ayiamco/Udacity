@@ -9,7 +9,7 @@ body{
     grid-template-rows:auto;
     grid-template-areas: "main sidebar";
     margin-top: 5px;
-    grid-gap:10px;
+    grid-gap:20px;
    
 
 }
@@ -20,6 +20,7 @@ ul,ol{
 .article-main{
     grid-area:main;
     padding: 10px;
+    font-family: 'Architects Daughter', cursive;
 }
 .article-sidebar{
     grid-area:sidebar;
@@ -102,6 +103,43 @@ button{
 button  a{color:white;}
 h1,h2{text-align: center;}
 
+
+        .social-ico{
+            width: 20px;
+            height:20px;
+            
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+            color:brown
+        }
+        .social{
+
+            margin:auto;
+            padding: auto;;
+            
+        }
+        footer{
+            background-color: brown;
+            height:60px;
+            color:white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top:20px;
+            border-radius: 20px;
+        }
+        footer a{
+            color: white;
+        }
+        footer a:hover{
+            color: rgb(209, 192, 192);
+        }
+    
 @media (min-width:600px){
 
 

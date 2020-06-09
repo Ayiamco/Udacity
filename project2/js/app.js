@@ -149,7 +149,9 @@ window.onscroll = function() {showButton()};
 
 function showButton() {
     //Get the button
-    let anchorButton = document.getElementById("anchor"); 
+    var anchorButton = document.getElementById("anchor"); 
+
+    console.log(window.anchorButton)
 
     // show button if  user scrolls down 100px from the top of the DOM
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {

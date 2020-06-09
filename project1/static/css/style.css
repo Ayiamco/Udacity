@@ -1,20 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
-@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
-@import url("./static/css/header.css");
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .body{
     width:90vw;
     border: 1px solid black;
     font-weight: Roboto;
-    
 }
 nav a:hover{
     color:white;
 }
 nav a{
     padding: 10px;
+    
 }
 
+.hd{
+    height: 100px;
+    background-color:brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+.hd h1{
+    color: white;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 
+}
 button{
     background-color: brown;
     text-decoration: none;
@@ -38,12 +53,13 @@ button a{
     text-decoration: none;
 }
 .post{
-    height: 300px;
+    height: 400px;
     text-align: center;
     box-shadow: 5px 5px #888888;
     margin-top:10px;
     border: 2px solid  #888888;
     background-color: rgb(220, 241, 234);
+    font-family: 'Pacifico', cursive;
    }
 
    
@@ -67,22 +83,22 @@ footer{
 
 @media (min-width: 600px )and (max-width: 900px)   {
     
+    
     nav a:hover{
         color:white;
         font-size: 25px;
     }
     .container{
-        
         display: grid;
         grid-template-columns: 46% 46%;
-        grid-template-rows:300px 300px 300px ;
+        grid-template-rows:400px 400px 400px ;
         grid-gap: 20px;
         grid-template-areas: 
                              "post1 post2"
                              "post3 post4"
                              "post5 post6";
          justify-content: center;
-         margin-top: 20px;
+         margin-top: 20px; 
     }
 .post{
  background-color: rgb(220, 241, 234);
@@ -135,7 +151,7 @@ footer{
         
         display: grid;
         grid-template-columns: 30% 30% 30%;
-        grid-template-rows:300px 300px 300px ;
+        grid-template-rows:400px 400px 400px ;
         grid-gap: 20px;
         grid-template-areas: 
                              "post1 post2 post3"
