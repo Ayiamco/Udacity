@@ -16,7 +16,7 @@ const BASEURL='https://api.openweathermap.org/data/2.5/weather?zip='
 /* Step 2*/
 //get request to openweather api
 async function getWeather(base_url,api_key,zip_code){
-    url=base_url + `${zip_code}&appid=${api_key}`
+    url=base_url + `${zip_code}&appid=${api_key}&units=imperial`
     const response=await fetch(url)
     const responseData= await response.json()
     return responseData
@@ -30,25 +30,26 @@ generate.addEventListener('click',async ()=>{
     console.log("zipcode: ",zipCode)
     const response= getWeather(BASEURL,APIKEY,zipCode)
     console.log(response)
+    //get feeling from user
+    let feeling=document.getElementById('feelings')
+    feeling=feeling.value
     return response.then((data)=>{
         let temperature= data['main']['temp']
-        
-        //get feeling from user
-        let feeling=document.getElementById('feelings')
-        feeling=feeling.value
+    
         // Create a new date instance 
         let d = new Date();
         const newDate = d.getMonth()+'-'+ d.getDate()+'-'+ d.getFullYear();
         
-        let postingdata=postData('/addData',{temperature,feeling,date:newDate})
+        let postingdata= postData('/addData',{temperature,feeling,date:newDate})
    }).then( async (postResp)=>  {
-        let retrivedData= await getPostedData('/getData')
+        let retrivedData= await getPostedData('/getData','feeling',feeling)
+        console.log("recieved Data: ",retrivedData)
         let entryHolder=document.getElementById("entryHolder")
         entryHolder.style.display='none'
         let entrydate=document.getElementById('date')
         entrydate.innerHTML=`<p>Date: ${retrivedData.date}</p>`
         let entryTemp=document.getElementById('temp')
-        entryTemp.innerHTML=`<p>Temperature: ${retrivedData.temperature} &deg K</p>`
+        entryTemp.innerHTML=`<p>Temperature: ${retrivedData.temperature} &deg F</p>`
         let entryContent=document.getElementById('content')
         entryContent.innerHTML=`<p>Current Emotional State: <br>${retrivedData.feeling} </p>`
 
@@ -56,18 +57,28 @@ generate.addEventListener('click',async ()=>{
         entryHolder.style.display='block'
         
    }).catch(error=>{
-        console.log('There was an error')
+        console.log('There was an error') //mostly wrong zipcode or bad network
+        /*return entryHolder div to default*/
+        document.getElementById("entryHolder").style.border='none'
         let entrydate=document.getElementById('date')
+        let entryContent=document.getElementById('content')
+
+        /*display proper error message*/
+        let entryTemp=document.getElementById('temp')
         if (zipCode===''){
 
             entrydate.innerHTML=`<p> Please Enter a  valid zip code </p>`
             let entryHolder=document.getElementById("entryHolder")
             entryHolder.style.backgroundColor='rgb(129, 111, 111)'
+            entryContent.innerHTML=''
+            entryTemp.innerHTML=''
         }
         else{
             entrydate.innerHTML=`<p> Error!!! ${zipCode} is not a valid zip code  in the United States. </p>`
             let entryHolder=document.getElementById("entryHolder")
             entryHolder.style.backgroundColor='rgb(129, 111, 111)' 
+            entryContent.innerHTML=''
+            entryTemp.innerHTML=''
         }
         
    })
@@ -92,8 +103,8 @@ const postData=async (url='',data={}) =>{
     console.log(newData) 
 }
 
-getPostedData= async function (url){
-    let resp= fetch(url)
+getPostedData= async function (url,keyParam,valueParam){
+    let resp= fetch(`${url}?${keyParam}=${valueParam}`)
     return resp.then(finalResp =>{
         return finalResp.json()
     })
