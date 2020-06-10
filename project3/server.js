@@ -34,9 +34,9 @@ function addData(request,response){
 }
 function getData(request,response){
     //dont know wat to do yet
-    console.log("Last Added Data: ",projectData[projectData.length-1])
+    console.log("Database State: ",projectData)
     response.send(JSON.stringify(projectData[0]))
-    console.log("server response: ",JSON.stringify(projectData[0]))
+    console.log("server response (Get): ",JSON.stringify(projectData[0]))
     console.log('#############################################')
 }
 app.post('/addData',addData)

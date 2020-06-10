@@ -32,22 +32,44 @@ generate.addEventListener('click',async ()=>{
     console.log(response)
     return response.then((data)=>{
         let temperature= data['main']['temp']
-        console.log('Tempearture: ',temperature)
-
+        
         //get feeling from user
         let feeling=document.getElementById('feelings')
         feeling=feeling.value
-        console.log("feeling: ",feeling)
-
         // Create a new date instance 
         let d = new Date();
         const newDate = d.getMonth()+'-'+ d.getDate()+'-'+ d.getFullYear();
-        console.log("date:",newDate)
-
+        
         let postingdata=postData('/addData',{temperature,feeling,date:newDate})
    }).then( async (postResp)=>  {
-        let retrivedData= await getPostedData('/getData',)
-        console.log(retrivedData.json)
+        let retrivedData= await getPostedData('/getData')
+        let entryHolder=document.getElementById("entryHolder")
+        entryHolder.style.display='none'
+        let entrydate=document.getElementById('date')
+        entrydate.innerHTML=`<p>Date: ${retrivedData.date}</p>`
+        let entryTemp=document.getElementById('temp')
+        entryTemp.innerHTML=`<p>Temperature: ${retrivedData.temperature} &deg K</p>`
+        let entryContent=document.getElementById('content')
+        entryContent.innerHTML=`<p>Current Emotional State: <br>${retrivedData.feeling} </p>`
+
+        entryHolder.style='border:2px white solid';
+        entryHolder.style.display='block'
+        
+   }).catch(error=>{
+        console.log('There was an error')
+        let entrydate=document.getElementById('date')
+        if (zipCode===''){
+
+            entrydate.innerHTML=`<p> Please Enter a  valid zip code </p>`
+            let entryHolder=document.getElementById("entryHolder")
+            entryHolder.style.backgroundColor='rgb(129, 111, 111)'
+        }
+        else{
+            entrydate.innerHTML=`<p> Error!!! ${zipCode} is not a valid zip code  in the United States. </p>`
+            let entryHolder=document.getElementById("entryHolder")
+            entryHolder.style.backgroundColor='rgb(129, 111, 111)' 
+        }
+        
    })
     
 })
@@ -70,12 +92,10 @@ const postData=async (url='',data={}) =>{
     console.log(newData) 
 }
 
-getPostedData= async function (url=''){
-    let resp= await fetch(url)
-    resp.then(finalResp =>{
-        console.log("final Resp: ",finalResp)
+getPostedData= async function (url){
+    let resp= fetch(url)
+    return resp.then(finalResp =>{
+        return finalResp.json()
     })
-    
-    return postedResp
        
 }

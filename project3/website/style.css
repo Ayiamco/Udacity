@@ -70,3 +70,13 @@ h1{
     border-radius: 10px; 
     color:white
 }
+
+#entryHolder{
+    background-color: rgb(48, 82, 114);
+    width: calc(50vw - 12px);
+    height:auto;
+    color: white;
+    margin: auto;
+    margin-top:5px;
+    
+}
