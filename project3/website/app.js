@@ -98,9 +98,6 @@ const postData=async (url='',data={}) =>{
         body:JSON.stringify(data)
     })
 
-    console.log(data,url) 
-    const newData=await response.json();
-    console.log(newData) 
 }
 
 getPostedData= async function (url,keyParam,valueParam){
