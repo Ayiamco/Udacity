@@ -32,7 +32,7 @@ function addData(request,response){
     let postData=request.body
     projectData[postData.feeling]=[postData.temperature,postData.date]
     console.log("current State of ProjectData: ",projectData)
-    return {status:200}
+    response.send('succeful')
 }
 
 function getData(request,response){
