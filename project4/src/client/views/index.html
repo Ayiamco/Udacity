@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>        
+    </head>
+
+    <body>
+
+        <header class="header">
+            <h1>Welcome</h1>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return handleSubmit(event)">
+                    <label for="input"> Enter your article:</label>
+                    <textarea id="input" name="input"></textarea onblur="return Client.onBlur()">
+
+                    <input type="submit" name="" value="Analyse" onclick="return Client.handleSubmit(event)" >
+                </form>
+            <section>
+
+            <section>
+                <div id="results">
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+        <script>
+            //last configuration to set up service workers
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+form {
+    border: 1px white solid;
+    border-radius: 3px;
+    padding: 40px;
+    margin-top: 20px;
+
+    input {
+        padding: 5px 20px;
+        width: 100%;
+        line-height: 16px;
+        margin: 10px 0;
+        position: relative;
+        background-color: rgb(75, 150, 146);
+        color: white;
+    }
+    textarea{
+        width:calc( 100% - 2px ) ;
+        height:200px;
+        border-radius: 10px;
+        resize: none;
+    }
+}
+
